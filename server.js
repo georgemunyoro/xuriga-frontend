@@ -1,14 +1,16 @@
 const express = require("express");
 const next = require("next");
-const cors = require("cors");
-
-const { nanoid } = require("nanoid"); const { Client } = require("pg"); const dev = process.env.NODE_ENV !== "production"; require("dotenv").config();
+const dev = process.env.NODE_ENV !== "production";
+const { Client } = require("pg");
+require("dotenv").config();
 
 const app = next({ dev });
 const handle = app.getRequestHandler();
 
 const getDatabaseConnection = () => {
-    databaseConnection = new Client({ connectionString: process.env.DATABASE_CONNECTION_STRING });
+    const databaseConnection = new Client({
+	connectionString: process.env.DATABASE_CONNECTION_STRING
+    });
     databaseConnection.connect();
     return databaseConnection;
 }
@@ -23,14 +25,14 @@ app.prepare()
 	try {
 	    const databaseConnection = getDatabaseConnection();
 	    const { rows } = await databaseConnection.query("SELECT url FROM urls WHERE id = $1", [slug]);
+	    databaseConnection.end();
 
 	    let redirectUrl = rows[0]
 	    if (!redirectUrl.url.startsWith("http")) {
-		redirectUrl = "http://" + redirectUrl.url;
+		redirectUrl.url = "http://" + redirectUrl.url;
 	    }
 
-	    res.redirect(redirectUrl);
-	    databaseConnection.end();
+	    res.redirect(redirectUrl.url);
 	} catch (err) {
 	    handle(req, res);
 	}
