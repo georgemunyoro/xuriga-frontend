@@ -18,7 +18,7 @@ export default function CreateUrl() {
 	    body: JSON.stringify({
 		url: url,
 		slug: slug
-	    });
+	    })
 	});
 
 	const data = await rawResponse.json();
