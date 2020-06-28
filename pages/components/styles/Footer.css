@@ -1,0 +1,9 @@
+
+.footer-container {
+  background: black;
+  height: 1rem;
+  width: 100vw;
+  border-top: 0.5rem groove white;
+  position: absolute;
+  bottom: 0;
+}

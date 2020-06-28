@@ -1,0 +1,23 @@
+
+.url-created-container {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding-top: 20%;
+}
+
+.url-created-container > a {
+  font-size: 2rem;
+  color: #333;
+  cursor: pointer;
+}
+
+.url-created-container > a:hover {
+  color: black;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+

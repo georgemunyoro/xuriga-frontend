@@ -1,0 +1,49 @@
+
+.navbar-container > * {
+  display: flex;
+}
+
+.navbar-container {
+  width: 100%;
+  color: white;
+  background: black;
+  display: flex;
+  padding: 0 11%;
+}
+
+.navbar-end {
+  position: absolute;
+  right: 10%;
+}
+
+.nav-logo {
+  width: 2rem;
+  margin: 0;
+}
+
+.navbar-brand {
+  padding: 0.6rem !important;
+}
+
+.navbar-brand:hover {
+  background: black !important;
+}
+
+.navbar-item {
+  padding: 1.2rem;
+  cursor: pointer;
+}
+
+.navbar-item:hover {
+  background: white;
+  color: black;
+}
+
+.navbar-start {
+}
+
+@media (max-width:768px) {
+  .navbar-end {
+	display: none;
+  }
+}

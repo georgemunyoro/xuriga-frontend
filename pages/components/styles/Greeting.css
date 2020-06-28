@@ -1,0 +1,95 @@
+
+.greeting-container {
+  width: 100%;
+  height: 100vh;
+  vertical-align: middle;
+  padding: 0 10%;
+  background: #fff;
+  font-family: "Jetbrains mono";
+  display: flex;
+}
+
+.img-container {
+  text-align: center;
+  width: 30%;
+}
+
+.img-container > img {
+  width: 100%;
+  position: relative;
+  display: inline-box;
+  top: 25%;
+}
+
+.greeting-text-container {
+  position: relative;
+  top: 17%;
+  display: inline-block;
+  width: 50%;
+  padding: 2rem 5rem;
+}
+
+.greeting-text-container > h1 {
+  font-size: 5rem;
+  width: 100px;
+}
+
+.greeting-text-container > p {
+  text-align: justify;
+}
+
+.greeting-more-button, .greeting-login-button {
+  margin: 0 !important;
+  padding: 1rem;
+  border: none;
+}
+
+.dark {
+  background: black !important;
+  color: white !important;
+}
+
+.light {
+  background: white !important;
+  color: black !important;
+}
+
+.light.bordered {
+  border: 1px solid black;
+}
+
+.dark.bordered {
+  border: 1px solid black;
+}
+
+.greeting-button-container {
+  margin: 1rem 0;
+  text-align: left;
+}
+
+@media (max-width:768px) {
+  .greeting-text-container > h1 {
+	font-size: 3rem;
+  }
+
+  .greeting-text-container > p {
+	text-align: left;
+  }
+
+  .greeting-text-container {
+	width: 100%;
+	top: 16%;
+  }
+
+  .greeting-button-container {
+	display: flex;
+  }
+
+  .img-container {
+	display: none;
+  }
+
+  .greeting-text-container {
+	padding: 1rem;
+  }
+}
